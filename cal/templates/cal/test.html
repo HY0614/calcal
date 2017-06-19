@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>testpage</title>
+</head>
+<body>
+이 페이지는 테스트 / 마이페이지
+내 이름은 {{profile.name}}<br>
+내 몸무게는 {{profile.weight}}<br>
+내 키는 {{profile.height}}<br>
+내 BMR은 {{profile.bmr}}<br>
+{% if profile.gender == 1 %}
+내 성별은 남자입니다<hr>
+{% else %}
+내 성별은 여자입니다<hr>
+{% endif %}
+<hr>
+
+<h3>최근 먹은 10가지 음식</h3>
+{% for eat in eats %}
+{{eat.food}}를/을 {{eat.amount}}만큼 {{eat.date}}에 먹었습니다<br>
+{% endfor %}
+
+<h3>최근 한 10가지 운동</h3>
+{% for workout in workouts %}
+{{workout.exercise}}를/을 {{workout.duration}}만큼 {{workout.date}}에 했습니다<br>
+{% endfor %}
+</body>
+</html>

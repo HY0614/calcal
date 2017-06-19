@@ -1,5 +1,6 @@
 from django.contrib import admin
-from .models import Food,Eat,Exercise,Workout
+from .models import Food,Eat,Exercise,Workout,Profile
+
 
 
 class FoodAdmin(admin.ModelAdmin):
@@ -12,3 +13,4 @@ admin.site.register(Food,FoodAdmin)
 admin.site.register(Exercise,ExerciseAdmin)
 admin.site.register(Eat)
 admin.site.register(Workout)
+admin.site.register(Profile)

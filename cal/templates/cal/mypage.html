@@ -1,0 +1,219 @@
+{% extends "cal/base.html" %}
+
+{% block content %}
+
+	<section id="fh5co-home" data-section="home" style="background-image: url(/static/images/full_image_2.jpg);" data-stellar-background-ratio="0.5">
+		<div class="gradient"></div>
+		<div class="container">
+			<div class="text-wrap">
+				<div class="text-inner">
+					<div class="row">
+						<div class="col-md-4">
+							<h1 class="to-animate">{{profile.name}}님</h1>
+							<h2 class="to-animate">기초대사량: {{profile.bmr}}</h2>
+							<h2 class="to-animate">나이: {{profile.age}}</h2>
+							<h2 class="to-animate">몸무게: {{profile.weight}}</h2>
+							<hr>
+							<h2 class="to-animate"> 남은 칼로리: {{left_calorie}}kcal<h2>
+						</div>
+						<div class="col-md-4">
+							<h1 class="to-animate">오늘 섭취한 음식</h1>
+							
+						{%  for eat in eats_today %}
+
+							<h2 class="to-animate">{{eat.food.name}} : {{eat.amount}}인분</h2>
+						{% endfor %}					
+						<hr>
+						<h2 class="to-animate"> 총 섭취한 칼로리: {{eat_sum}}kcal</h2>
+
+
+						</div>
+						<div class="col-md-4">
+							<h1 class="to-animate">오늘 섭취한 음식</h1>
+							
+						{%  for workout in workouts_today %}
+
+							<h2 class="to-animate">{{workout.exercise.name}} : {{workout.duration}}시간</h2>
+						{% endfor %}					
+						<hr>
+						<h2 class="to-animate"> 총 연소한 칼로리: {{workout_sum}}kcal</h2>
+
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="slant"></div>
+	</section>
+
+	
+
+	<section id="fh5co-work" data-section="work">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 section-heading text-center">
+					<h2 class="to-animate">Work</h2>
+					<div class="row">
+						<div class="col-md-8 col-md-offset-2 subtext to-animate">
+							<h3>당신이 최근에 한 10가지 운동들입니다.</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row row-bottom-padded-sm">
+				{% for workout in workouts %}
+
+				<div class="col-md-4 col-sm-6 col-xxs-12">
+					<a href="/static/images/work_1.jpg" class="fh5co-project-item image-popup to-animate">
+						
+						<div class="fh5co-text">
+						<h2>{{workout.exercise.name}}</h2>
+						<span>{{workout.duration}}시간</span><br>
+						<span>{{workout.exercise.calorie}}kcal</span>
+
+						</div>
+					</a>
+				</div>
+				{% endfor %}
+				
+			</div>
+			<div class="row">
+				<div class="col-md-12 text-center to-animate">
+					<p>* Demo images from <a href="http://plmd.me/" target="_blank">plmd.me</a></p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="fh5co-work" data-section="eats">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 section-heading text-center">
+					<h2 class="to-animate">Eats</h2>
+					<div class="row">
+						<div class="col-md-8 col-md-offset-2 subtext to-animate">
+							<h3>당신이 최근에 먹은 10가지 음식들입니다.</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row row-bottom-padded-sm">
+			{% for eat in eats %}
+				
+				<div class="col-md-4 col-sm-6 col-xxs-12">
+					<a href="/static/images/work_1.jpg" class="fh5co-project-item image-popup to-animate">
+						
+						<div class="fh5co-text">
+						<h2>{{eat.food.name}}</h2>
+						<span>{{eat.amount}}인분 섭취</span><br>
+						<span>{{eat.food.calorie}}kcal/인분</span>
+						</div>
+					</a>
+				</div>
+			{% endfor %}
+			</div>
+			<div class="row">
+				<div class="col-md-12 text-center to-animate">
+					<p>* Demo images from <a href="http://plmd.me/" target="_blank">plmd.me</a></p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+
+
+				<div class="clearfix visible-sm-block"></div>
+
+				<div class="col-md-6 col-sm-6 fh5co-service to-animate">
+					<i class="icon to-animate-2 icon-video2"></i>
+					<h3>Photo &amp; Video</h3>
+					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean</p>
+				</div>
+				<div class="col-md-6 col-sm-6 fh5co-service to-animate">
+					<i class="icon to-animate-2 icon-monitor"></i>
+					<h3>CMS &amp; eCommerce</h3>
+					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean</p>
+				</div>
+				
+			</div>
+		</div>
+	</section>
+	
+	<section id="fh5co-about" data-section="about">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 section-heading text-center">
+					<h2 class="to-animate">About</h2>
+					<div class="row">
+						<div class="col-md-8 col-md-offset-2 subtext to-animate">
+							<h3></h3>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-4 col-md-offset-4 ">
+					<div class="fh5co-person text-center to-animate">
+						<figure><img src="/static/images/person1.jpg" alt="Image"></figure>
+						<h3>Hanyoung Kim</h3>
+						<span class="fh5co-position">Web Designer</span>
+						<p>안녕하세요!</p>
+						<ul class="social social-circle">
+						
+							<li><a href="https://www.facebook.com/profile.php?id=100012423037374"><i class="icon-facebook"></i></a></li>
+							<li><a href="https://github.com/HY0614"><i class="icon-dribbble"></i></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+	<section id="fh5co-counters" style="background-image: url(/static/images/full_image_1.jpg);" data-stellar-background-ratio="0.5">
+		<div class="fh5co-overlay"></div>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 section-heading text-center to-animate">
+					<h2>Fun Facts</h2>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-3 col-sm-6 col-xs-12">
+					<div class="fh5co-counter to-animate">
+						<i class="fh5co-counter-icon icon-briefcase to-animate-2"></i>
+						<span class="fh5co-counter-number js-counter" data-from="0" data-to="89" data-speed="5000" data-refresh-interval="50">89</span>
+						<span class="fh5co-counter-label">Finished projects</span>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-6 col-xs-12">
+					<div class="fh5co-counter to-animate">
+						<i class="fh5co-counter-icon icon-code to-animate-2"></i>
+						<span class="fh5co-counter-number js-counter" data-from="0" data-to="2343409" data-speed="5000" data-refresh-interval="50">2343409</span>
+						<span class="fh5co-counter-label">Line of codes</span>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-6 col-xs-12">
+					<div class="fh5co-counter to-animate">
+						<i class="fh5co-counter-icon icon-cup to-animate-2"></i>
+						<span class="fh5co-counter-number js-counter" data-from="0" data-to="1302" data-speed="5000" data-refresh-interval="50">1302</span>
+						<span class="fh5co-counter-label">Cup of coffees</span>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-6 col-xs-12">
+					<div class="fh5co-counter to-animate">
+						<i class="fh5co-counter-icon icon-people to-animate-2"></i>
+						<span class="fh5co-counter-number js-counter" data-from="0" data-to="52" data-speed="5000" data-refresh-interval="50">52</span>
+						<span class="fh5co-counter-label">Happy clients</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	
+	{% endblock %}
+	
+	
+

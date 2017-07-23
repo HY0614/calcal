@@ -9,6 +9,8 @@
 				<div class="text-inner">
 					
 					<div class="row">
+					<br>
+					<br>
 						<div class="col-md-4">
 							<h1 class="to-animate">{{profile.name}}님</h1>
 							<h2 class="to-animate">기초대사량: {{profile.bmr}}</h2>
@@ -16,6 +18,8 @@
 							<h2 class="to-animate">몸무게: {{profile.weight}}</h2>
 							<hr>
 							<h2 class="to-animate"> 남은 칼로리: {{left_calorie}}kcal<h2>
+						<br>
+						<br>	
 						</div>
 						<div class="col-md-4">
 							<h1 class="to-animate">오늘 섭취한 음식</h1>
@@ -27,7 +31,8 @@
 						<hr>
 						<h2 class="to-animate"> 총 섭취한 칼로리: {{eat_sum}}kcal</h2>
 						<a href="/mypage/new_eat/" class="btn btn-success">먹은 음식</a>
-
+						<br>
+						<br>
 						</div>
 						<div class="col-md-4">
 							<h1 class="to-animate">오늘 한 운동</h1>
@@ -35,7 +40,9 @@
 						{%  for workout in workouts_today %}
 
 							<h2 class="to-animate">{{workout.exercise.name}} : {{workout.duration}}시간</h2>
-						{% endfor %}					
+						{% endfor %}
+
+
 						<hr>
 						<h2 class="to-animate"> 총 연소한 칼로리: {{workout_sum}}kcal</h2>
 						<a href="/mypage/new_workout/" class="btn btn-success">운동 등록</a>

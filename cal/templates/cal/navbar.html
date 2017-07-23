@@ -6,19 +6,15 @@
 		        </div>
 		        <div id="navbar" class="navbar-collapse collapse">
 		          <ul class="nav navbar-nav navbar-right">
-		            <li class="active"><a href="/" data-nav-section="home"><span>Home</span></a></li>
+
+
 		            {% if request.path == '/' %}
+		            <li class="active"><a href="/" data-nav-section="home"><span>Home</span></a></li>
 		            <li><a href="#" data-nav-section="about"><span>About</span></a></li>
 		            <li><a href="#" data-nav-section="funfacts"><span>Fun Facts</span></a></li>
 		            {% endif %}
-
-					{% if user.is_authenticated %}
-		            	<li><a href="/mypage/"><span>Mypage</span></a></li>
-						<li><a href="/accounts/logout/"><span>Logout</span></a></li>
-					{% else %}
-						<li><a href="/accounts/login/"><span>Login</span></a></li>
-					{% endif %}
 		            {% if request.path == '/mypage/' %}
+		            <li class="active"><a href="/" data-nav-section="home"><span>Mypage</span></a></li>
 		            <li><a href="#" data-nav-section="work"><span>Workout</span></a></li>
 		            <li><a href="#" data-nav-section="eats"><span>Eats</span></a></li>
 		      		{% endif %}

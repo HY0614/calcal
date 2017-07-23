@@ -24,7 +24,11 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', views.index),
     url(r'^mypage/$', views.mypage),
-    url(r'^accounts/login/$',auth_views.LoginView.as_view(template_name='authentication/login.html'))
+    url(r'^mypage/new_workout/$',views.new_workout),
+    url(r'^mypage/new_eat/$',views.new_eat),
+    url(r'^accounts/login/$',auth_views.LoginView.as_view(template_name='authentication/login.html')),
+    url(r'^accounts/logout/$',auth_views.LogoutView.as_view()),
+
 ]
 
 if settings.DEBUG:

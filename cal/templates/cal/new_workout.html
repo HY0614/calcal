@@ -1,0 +1,26 @@
+{% extends "cal/base.html" %}
+{% block content %}
+<section id="fh5co-home" data-section="home" style="background-image: url(/static/images/full_image_2.jpg);" data-stellar-background-ratio="0.5">
+        <div class="gradient"></div>
+        <div class="container">
+            <div class="text-wrap">
+                <div class="text-inner">
+                    <div class="row">
+                        <div class="col-md-4 col-md-offset-4">
+                        <h2 class="to-animate">방금 한 운동을 기록해주세요</h2>
+                        <form method='POST' action="/mypage/new_workout/" style="color:#000000">
+                                {% csrf_token %}
+                                {{form.as_p}}
+                                <button type='submit'>등록</button>
+                            </form>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slant"></div>
+    </section>
+</div>
+</body>
+{% endblock %}

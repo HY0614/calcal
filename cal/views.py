@@ -1,8 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import *
 import datetime
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import AuthenticationForm
+from .forms import EatForm, WorkoutForm
 # Create your views here.
 
 def index(request): 
@@ -67,5 +68,30 @@ def mypage(request):
 			}
 
 	return render(request,'cal/mypage.html',context)
- 
 
+@login_required
+def new_workout(request):
+    if request.method == "POST":
+        workoutform = WorkoutForm(request.POST)
+        if workoutform.is_valid:
+            workout= workoutform.save(commit=False)
+            workout.user = request.user
+            workout.save()
+            return redirect(mypage)
+    else:
+        workoutform = WorkoutForm
+    return render(request,'cal/new_workout.html',{'form':workoutform})
+
+
+@login_required
+def new_eat(request):
+    if request.method == "POST":
+        eatform = EatForm(request.POST)
+        if eatform.is_valid:
+            eat= eatform.save(commit=False)
+            eat.user = request.user
+            eat.save()
+            return redirect(mypage)
+    else:
+        eatform = EatForm
+    return render(request,'cal/new_eat.html',{'form':eatform})

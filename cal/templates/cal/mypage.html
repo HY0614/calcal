@@ -26,11 +26,11 @@
 						{% endfor %}					
 						<hr>
 						<h2 class="to-animate"> 총 섭취한 칼로리: {{eat_sum}}kcal</h2>
-
+						<a href="/mypage/new_eat/" class="btn btn-success">먹은 음식</a>
 
 						</div>
 						<div class="col-md-4">
-							<h1 class="to-animate">오늘 섭취한 음식</h1>
+							<h1 class="to-animate">오늘 한 운동</h1>
 							
 						{%  for workout in workouts_today %}
 
@@ -38,6 +38,7 @@
 						{% endfor %}					
 						<hr>
 						<h2 class="to-animate"> 총 연소한 칼로리: {{workout_sum}}kcal</h2>
+						<a href="/mypage/new_workout/" class="btn btn-success">운동 등록</a>
 
 
 						</div>

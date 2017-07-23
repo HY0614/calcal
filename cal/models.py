@@ -10,7 +10,7 @@ class Profile(models.Model):
 	height = models.IntegerField()
 	user = models.OneToOneField(settings.AUTH_USER_MODEL)
 	gender = models.IntegerField(choices=((1,("male")), (2,("female"))),default = 1)
-	bmr = models.IntegerField(blank=True) #보이지 않게 하자
+	bmr = models.IntegerField(blank=True,default=0) #보이지 않게 하자
 	def __str__(self):
 		return str(self.name)
 
